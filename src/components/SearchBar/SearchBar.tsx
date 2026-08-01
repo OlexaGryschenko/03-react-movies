@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import toast from "react-hot-toast";
 import styles from "./SearchBar.module.css";
 
@@ -7,8 +6,7 @@ interface SearchBarProps {
 }
 
 export default function SearchBar({ onSubmit }: SearchBarProps) {
-  const formRef = useRef<HTMLFormElement>(null);
-
+ 
   const formAction = (formData: FormData) => {
     const query = formData.get("query") as string;
     
@@ -18,7 +16,7 @@ export default function SearchBar({ onSubmit }: SearchBarProps) {
     }
     
     onSubmit(query);
-    formRef.current?.reset();
+    
   };
 
   return (
@@ -32,7 +30,7 @@ export default function SearchBar({ onSubmit }: SearchBarProps) {
         >
           Powered by TMDB
         </a>
-        <form ref={formRef} action={formAction} className={styles.form}>
+        <form  action={formAction} className={styles.form}>
           <input
             className={styles.input}
             type="text"
