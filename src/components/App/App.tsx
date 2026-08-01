@@ -5,7 +5,7 @@ import { fetchMovies } from "../../services/movieService";
 import type { Movie } from "../../types/movie";
 import MovieGrid from "../MovieGrid/MovieGrid"; 
 import toast, { Toaster } from "react-hot-toast";
-import ErrorMassage from "../ErrorMessage/ErrorMessage";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import Loader from "../Loader/Loader";
 import MovieModal from "../MovieModal/MovieModal";
 
@@ -51,7 +51,7 @@ const openModal = (movie: Movie) => {
       <h1>Main content of the page</h1>
       <SearchBar onSubmit={handleSearch} />
 
-      {isError && <ErrorMassage/>}
+      {isError && <ErrorMessage/>}
       {isLoading && <Loader />}
                
       {movies.length > 0 && !isLoading && !isError && (
