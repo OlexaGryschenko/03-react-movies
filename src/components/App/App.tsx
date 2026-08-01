@@ -55,7 +55,7 @@ const openModal = (movie: Movie) => {
       {isLoading && <Loader />}
                
       {movies.length > 0 && !isLoading && !isError && (
-        <MovieGrid movies={movies} onMovieClick={openModal} />
+        <MovieGrid movies={movies} onSelect={openModal} />
       )}
       {selectedMovie && <MovieModal movie={selectedMovie} onClose={closeModal} />}
 
