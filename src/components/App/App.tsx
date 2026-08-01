@@ -26,6 +26,7 @@ const openModal = (movie: Movie) => {
 
   const handleSearch = async (topic: string) => {
     try {
+      setIsLoading(true);
       setIsError(false);
       setMovies([]);
 
